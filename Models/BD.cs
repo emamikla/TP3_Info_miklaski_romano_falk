@@ -22,7 +22,7 @@ public class BD
         string query = "INSERT INTO Palabras (Texto) VALUES (@palabra)";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            connection.Execute(query , new {Texto = palabra}); 
+            connection.Execute(query , new {palabra}); 
         }
     }
 }

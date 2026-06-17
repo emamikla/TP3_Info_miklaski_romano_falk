@@ -1,8 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<body>
-    <main>
+
+<main>
         <h1>EL AHORCADO</h1>
         <h3>Bienvenido al ahorcado! Debes adivinar la palabra con un máximo de 10 intentos.</h3>
         <section>
@@ -15,9 +15,12 @@
             </div>
         </div>
         <div>
-            <input type="text" id= "letra" maxLength ="1" placeholder="Ingresa la letra"></br></br>
+            <input type="text" id= "letra" maxLength ="1" placeholder="Ingresa la letra"><br><br>
             <button onclick = "ArriesgarLetra()">PROBAR</button>
-            <button><a href="@UR">Nuestro menú</a></button>
+            <form method="post" action = '@Url.Action("AgregarPalabra", "Palabras" , new{palabra = ""})'>
+                <input type="text" name="palabra" placeholder="Agregar palabra">
+                <button type="submit">AGREGAR</button>
+            </form>
         </div>
         <input type ="hidden" id="palabra" value="@ViewBag.palabra">
         </section>
@@ -26,9 +29,9 @@
             <div id = "letrasFaltantes">
             </div>
         </section>
-        <section>
+    <section>
         <div id= "resultado">
         </div>
-        </section>
-    </main>
-</body>
+    </section>
+</main>
+

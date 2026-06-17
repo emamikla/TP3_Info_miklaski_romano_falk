@@ -20,8 +20,9 @@ public class PalabrasAhorcado
         return palabras[numero];
     }
 
-    public void agregarPalabra (string palabra){
-        BD.agregarPalabra(palabra); 
+    public string agregarPalabra (string palabra){
+        BD.agregarPalabra(palabra.ToUpper()); 
         palabras = BD.hacerLista();
+        return "Palabra agregada correctamente";
     }
 }
